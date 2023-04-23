@@ -7,6 +7,8 @@
   --back-btn-cl: #f4f4fd;
   --icon-color: #afb1b8;
   --icon-color-second: #8e8f99;
+  --modal-bg: #fcfcfc;
+  --cornflower: #e7e9fc;
 }
 
 body {
@@ -112,6 +114,10 @@ img {
   color: var(--logo-span);
 }
 
+.nav-list .item {
+  position: relative;
+}
+
 .nav-list {
   display: flex;
   align-items: center;
@@ -124,6 +130,9 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--logo-span);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .text-link:hover,
@@ -131,6 +140,22 @@ img {
   color: var(--hover-cl);
 }
 
+.current {
+  color: var(--hover-cl);
+}
+
+.current::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  border-radius: 2px;
+  width: 100%;
+  height: 4px;
+  background-color: var(--hover-cl);
+}
+
+/* address */
 .contact {
   font-style: normal;
 }
@@ -146,6 +171,9 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--contact-cl);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-link:hover,
 .contact-link:focus {
@@ -200,12 +228,62 @@ img {
   border-radius: 4px;
   margin-left: auto;
   margin-right: auto;
+
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-order:hover,
 .btn-order:focus {
   color: var(--back-cl);
   background-color: var(--hover-cl);
+}
+
+/* modal */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(46, 47, 66, 0.4);
+  transform: scale(1);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.1);
+}
+
+.modal {
+  position: absolute;
+  min-width: 408px;
+  min-height: 576px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 24px;
+  background-color: var(--modal-bg);
+}
+
+.button-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--cornflower);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 /* features, services, team, customers */
 
@@ -230,6 +308,9 @@ img {
   background-color: #f4f4fd;
   margin-bottom: 8px;
   border-radius: 4px;
+  transition-property: filter;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .features-container:hover,
@@ -330,6 +411,10 @@ img {
   background-color: var(--text-cl);
   border-radius: 50%;
   border: 0;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-link:hover,
 .btn-link:focus {
@@ -354,6 +439,10 @@ img {
   justify-content: center;
   align-items: center;
   color: var(--icon-color-second);
+
+  transition-property: fill, border-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-svg {
