@@ -547,6 +547,10 @@ img {
 
   color: var(--text-cl);
   background-color: var(--back-btn-cl);
+
+  transition-property: color, background-color, border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter .item:hover,
