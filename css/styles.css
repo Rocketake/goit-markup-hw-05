@@ -588,8 +588,8 @@ img {
   color: var(--back-btn-cl);
 }
 
-.works-list .item:hover .item-description,
-.works-list .item:focus .item-description {
+.works-list .link:hover .item-description,
+.works-list .link:focus .item-description {
   transform: translateY(-300px);
 }
 
