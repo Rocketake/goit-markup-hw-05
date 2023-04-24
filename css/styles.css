@@ -563,6 +563,36 @@ img {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+/* animated description */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.item-description {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 360px;
+  height: 300px;
+  padding: 40px 32px 164px;
+  background-color: var(--text-cl);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.item-description .text {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--back-btn-cl);
+}
+
+.works-list .item:hover .item-description,
+.works-list .item:focus .item-description {
+  transform: translateY(-300px);
+}
+
 .works-description {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
